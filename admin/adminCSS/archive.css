@@ -1,0 +1,208 @@
+/* ================= ARCHIVE CENTER STYLES ================= */
+.archive-list {
+    margin-top: 20px;
+}
+
+.archive-tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tab-btn {
+    padding: 12px 24px;
+    background: #222;
+    color: #ccc;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.tab-btn:hover {
+    background: #333;
+    color: #fff;
+}
+
+.tab-btn.active {
+    background: #C9A227;
+    color: #000;
+    border-color: #000;
+    font-weight: bold;
+}
+
+/* Archive Card */
+.archive-card {
+    background: linear-gradient(135deg, #1a1a1a, #222);
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 18px;
+    border: 1px solid #333;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    transition: all 0.4s ease;
+}
+
+.archive-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(201,162,39,0.15);
+    border-color: #C9A227;
+}
+
+.archive-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.archive-header > div:first-child {
+    flex: 1;
+}
+
+.type-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 12px;
+}
+
+.type-product { background: #e67e22; color: white; }
+.type-order   { background: #28a745; color: white; }
+.type-user    { background: #007bff; color: white; }
+
+.archive-header strong {
+    color: #FFC107;
+    font-size: 1.2rem;
+}
+
+.archive-header small {
+    color: #aaa;
+    margin-left: 10px;
+}
+
+/* Action Buttons */
+.actions a {
+    padding: 10px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    margin-left: 8px;
+}
+
+.restore {
+    background: #28a745;
+    color: white;
+}
+
+.restore:hover {
+    background: #218838;
+    transform: translateY(-2px);
+}
+
+.delete {
+    background: #dc3545;
+    color: white;
+}
+
+.delete:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+}
+
+/* Empty State */
+.empty {
+    text-align: center;
+    padding: 100px 20px;
+    color: #888;
+}
+
+.empty h3 {
+    font-size: 2rem;
+    color: #C9A227;
+    margin-bottom: 15px;
+}
+
+/* Success Message */
+.success-msg {
+    background: #d4edda;
+    color: #155724;
+    padding: 16px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+    margin: 20px 0;
+    border-left: 6px solid #28a745;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .archive-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .actions {
+        margin-top: 15px;
+        width: 100%;
+    }
+    .actions a {
+        display: block;
+        text-align: center;
+        margin: 8px 0;
+    }
+}
+/* ================= ARCHIVE – LIGHT MODE FIXES ================= */
+body.light-mode .archive-card {
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    color: #333;
+}
+
+body.light-mode .archive-card:hover {
+    border-color: #C9A227;
+    box-shadow: 0 15px 35px rgba(201,162,39,0.12);
+}
+
+body.light-mode .archive-header strong { color: #C9A227; }
+body.light-mode .archive-header small { color: #666; }
+
+body.light-mode .type-badge {
+    color: white;
+}
+
+body.light-mode .success-msg {
+    background: #d4edda;
+    color: #155724;
+    border-left: 6px solid #28a745;
+}
+
+body.light-mode .tab-btn {
+    background: #f1f1f1;
+    color: #444;
+}
+
+body.light-mode .tab-btn:hover {
+    background: #e0e0e0;
+}
+
+body.light-mode .tab-btn.active {
+    background: #C9A227;
+    color: #000;
+}
+
+body.light-mode .empty {
+    color: #888;
+}
+
+body.light-mode .empty h3 {
+    color: #C9A227;
+}

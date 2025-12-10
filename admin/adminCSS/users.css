@@ -1,0 +1,247 @@
+/* ================= GLOBAL RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body.admin-page {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0D0D0D; /* dark default */
+  color: #F8F8F4;
+  transition: background-color 0.3s, color 0.3s;
+  overflow-x: hidden;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  background: #000;
+  border-right: 2px solid #C9A227;
+  padding: 80px 20px 20px;
+  transition: width 0.3s ease, background 0.3s, left 0.3s;
+  z-index: 1100;
+}
+
+.sidebar.collapsed {
+  width: 70px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li a {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px;
+  color: #F8F8F4;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s, color 0.3s;
+}
+
+.sidebar li a i {
+  width: 25px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.sidebar li a span {
+  display: inline-block;
+  transition: opacity 0.3s, margin 0.3s, transform 0.3s;
+}
+
+.sidebar.collapsed li a span {
+  opacity: 0;
+  transform: translateX(-10px);
+  width: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Hover / active states */
+.sidebar li a:hover,
+.sidebar li a.active {
+  background: #C9A227;
+  color: #000;
+}
+
+/* Collapsed state: no hover/active background */
+.sidebar.collapsed li a:hover,
+.sidebar.collapsed li a.active {
+  background: none;
+  color: #F8F8F4;
+  justify-content: center;
+}
+
+/* Sidebar header toggle button */
+.sidebar-header .toggle-btn {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: #C9A227;
+  transition: all 0.3s;
+}
+
+.sidebar.collapsed .sidebar-header .toggle-btn {
+  justify-content: center;
+}
+
+/* ================= HEADER ================= */
+.admin-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #000;
+  border-bottom: 2px solid #C9A227;
+  padding: 12px 25px;
+  z-index: 1200;
+  transition: background 0.3s, color 0.3s;
+}
+
+.hamburger {
+  font-size: 1.6rem;
+  color: #C9A227;
+  cursor: pointer;
+  display: none;
+}
+
+.theme-btn {
+  background: #C9A227;
+  border: none;
+  color: #000;
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ================= MAIN ================= */
+.admin-container {
+  margin-left: 260px;
+  padding: 120px 40px;
+  transition: margin-left 0.3s;
+}
+
+.sidebar.collapsed + .admin-container {
+  margin-left: 70px;
+}
+
+/* ================= TABLE ================= */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #fff;
+  text-align: left;
+}
+
+.admin-table th {
+  background: #121212;
+  color: #C9A227;
+  font-weight: 600;
+}
+
+/* ================= PAGE BUTTONS ================= */
+.archive-btn { 
+  background:#e67e22; 
+  color:white; 
+  padding:6px 12px; 
+  border-radius:6px; 
+  font-size:0.85em; 
+  text-decoration:none; 
+  transition:0.3s;
+}
+.archive-btn:hover { background:#d35400; }
+
+/* ================= SUCCESS MESSAGE ================= */
+.success-msg { 
+  background:#d4edda; 
+  color:#155724; 
+  padding:12px; 
+  border-radius:8px; 
+  margin:20px 0; 
+  text-align:center; 
+}
+
+/* ================= LIGHT MODE ================= */
+body.light-mode {
+  background: #F5F5EF;
+  color: #000;
+}
+
+body.light-mode .sidebar {
+  background: #F8F8F4;
+}
+
+body.light-mode .sidebar li a {
+  color: #000;
+}
+
+body.light-mode .sidebar li a:hover,
+body.light-mode .sidebar li a.active {
+  background: #C9A227;
+  color: #000;
+}
+
+body.light-mode .sidebar.collapsed li a:hover,
+body.light-mode .sidebar.collapsed li a.active {
+  background: none;
+  color: #000;
+  justify-content: center;
+}
+
+body.light-mode .admin-header {
+  background: #F8F8F4;
+  color: #000;
+}
+
+body.light-mode .theme-btn {
+  background: #000;
+  color: #FFC107;
+}
+
+body.light-mode .admin-table th {
+  background: #DDD;
+  color: #C9A227;
+}
+
+body.light-mode .admin-table td {
+  border-bottom: 1px solid #CCC;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .sidebar {
+    left: -260px;
+  }
+  .sidebar.open {
+    left: 0;
+  }
+  .admin-container {
+    margin-left: 0;
+    padding: 120px 20px;
+  }
+}
